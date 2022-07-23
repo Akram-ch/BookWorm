@@ -1,0 +1,50 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+    <style>
+        .header{
+            display:flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        .header h1{
+            font-size: 60px;
+            font-weight: bold;
+        }
+        .text{
+            display:flex;
+            justify-content: center;
+        }
+        .text p{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .form{
+            display:flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .widget{
+            margin: 0px;
+            width: 600px;
+        }
+        .widget p{
+            margin-left: 60px;
+            margin-bottom: 0px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+<div class="header">
+    <h1>Submit a new book</h1>
+</div>
+<div class="text">
+    <p>This book will be added to our database and will be accessible to you wherever you are</p>
+</div>
+<div class="form">
+    {{form(form)}}
+</div>
+{% endblock %}

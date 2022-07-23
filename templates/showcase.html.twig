@@ -1,0 +1,59 @@
+{% extends "base.html.twig" %}
+{% block stylesheets %}
+<style>
+    .showcase{
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .book img{
+        width: 275px;
+        height: 370px;
+        margin: 60px;
+        transition: all 0.4s ease-in-out;
+        border: 3px solid black;
+        padding: 2px;
+
+    }
+    .book img:hover{
+        cursor: pointer;
+        transform: scale(1.2);
+
+    }
+    .meta{
+        display:flex; 
+        justify-content: center;
+    }
+    .meta h2{
+        font-size: 30px;
+    }
+    .author{
+        display:flex;
+        justify-content: center;
+
+    }
+    .author h3 {
+        font-size: 15px;
+    }
+
+
+</style>
+
+{% endblock %}
+{% block body %}
+<div class="showcase">
+    {% for book in books %}
+    <div class="book">
+        <a href="gallery/{{book.getDocument()}}"><img src={{book.getCoverArt()}} alt=""></a>
+        <div class="meta">
+            <h2>{{book.getTitle()}}</h2>
+        </div>
+        <div class="author">
+            <h3>{{book.getAuthor()}}</h3>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
