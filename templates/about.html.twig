@@ -1,0 +1,38 @@
+{% extends "base.html.twig" %}
+{% block stylesheets %}
+    <style>
+        .header{
+            display:flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        .header h1{
+            font-size: 50px;
+
+        }
+        .description{
+            display:flex;
+            justify-content: center;
+            margin: 30px;
+        }
+        .description p{
+            font-size: 20px;
+
+        }
+
+
+    </style>
+{% endblock %}
+{% block body %}
+    <div class="header">
+        <h1>what is bookworm?</h1>
+    </div>
+    <div class="description">
+        <p>Bookworm is a fullstack solo project created with Symfony php framework,and incorporates html,css and javascript elements by Akram Chaouache,
+        a computer science engineering student based in Grenoble France, as part of my web developpement learning  
+        journey and to solidify the skills learned throughout my internship at Axia Solutions (2022).
+        This platform allows the user to upload a pdf book of their choosing and read through it in the form of a flipbook.
+        
+        </p>
+    </div>
+{% endblock %}

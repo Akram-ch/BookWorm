@@ -9,27 +9,34 @@
 	<script type="text/javascript" src={{asset('build/modernizr.2.5.3.min.js')}}></script>
 	<style>
 	body{
-		background: rgb(2,0,36);
-		background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,43,1) 35%, rgba(0,212,255,1) 100%);
+		background: rgb(61, 61, 61);
 	}
 	</style>
 
 </head>
 <body>
 
+
+<form action="post">
 	<div class="flipbook-viewport">
 		<div class="container">
 			<div class="flipbook">
 				<div style="background-image:url({{cover}})"></div>
 				<div style="background-image:url()"></div>
-
+				{% set i = 0 %}
 				{% for image in images %}
-					<div style="background-image:url({{asset(image)}})"></div>
+					<div style="background-image:url({{asset(image)}})">
+						<a href="/gallery/{{document}}/{{i}}">Load audio</a>
+						<audio src={{asset("audio/" ~ title ~ "/page_" ~ i ~ ".mp3")}} controls='controls'></audio>
+					</div>
+					{% set i = i + 1 %}
 				{% endfor %}
-				
+				<div style="background-image:url()"></div>
 			</div>
 		</div>
 	</div>
+	<a href="/gallery/{{document}}/read/more">Load more Pages</a>
+</form>				
 	<script type="text/javascript">
 
 function loadApp() {

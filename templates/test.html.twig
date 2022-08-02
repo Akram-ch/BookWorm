@@ -7,6 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <form method="post">
+        {% for i in 0..10 %}
+                    <input name="submit{{i}}" type="submit" value="Convert to Speech" />
+        {% endfor %}
+    </form>
 </body>
 </html>
